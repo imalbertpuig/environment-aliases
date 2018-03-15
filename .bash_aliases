@@ -26,6 +26,7 @@ alias grod='git rebase origin/develop'
 alias grom='git rebase origin/master'
 alias gcgca='gcg && gca'
 alias gpod='git pull origin develop'
+alias gpom='git pull origin master'
 
 # docker
 alias dc='docker-compose'
