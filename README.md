@@ -1,2 +1,2 @@
-# environment-aliases
-Single aliases file to share my environment used commands.
+# Environment Aliases
+Single file with all my aliases.
