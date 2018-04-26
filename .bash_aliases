@@ -1,8 +1,20 @@
-### Customized aliases ###
+# DOCKER
+alias dc='docker-compose'
+alias dc-up='docker-compose up -d'
+alias dc-kill='docker-compose kill'
+alias dc-rm='docker-compose rm --force'
+alias dc-reset='docker-compose kill && docker-compose rm --force && docker-compose up -d && docker-compose logs -f'
+alias dc-logs='docker-compose logs -f'
+alias dc-ps='docker-compose ps'
+alias dc-off='docker-compose kill && docker-compose rm --force'
+alias dockerstop='docker stop $(docker ps -a -q)'
+alias dockerrm='docker rm $(docker ps -a -q)'
+dc-enter () { docker exec -ti $1 bash; }
 
+# VIM
 alias vim='nvim'
 
-# git
+# GIT
 alias gl='git log '
 alias gs='git status '
 alias ga='git add '
@@ -11,7 +23,6 @@ alias gc='git commit '
 alias go='git checkout '
 alias gf='git diff '
 alias gr='git rebase '
-alias gk='gitk'
 alias gp='git pull '
 
 alias gaa='git add -A'
@@ -28,14 +39,12 @@ alias gcgca='gcg && gca'
 alias gpod='git pull origin develop'
 alias gpom='git pull origin master'
 
-# docker
-alias dc='docker-compose'
-alias dc-up='docker-compose up -d'
-alias dc-kill='docker-compose kill'
-alias dc-rm='docker-compose rm --force'
-alias dc-reset='docker-compose kill && docker-compose rm --force && docker-compose up -d && docker-compose logs -f'
-alias dc-logs='docker-compose logs -f'
-alias dc-ps='docker-compose ps'
-alias dc-off='docker-compose kill && docker-compose rm --force'
+if [ -f "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh" ]; then                                                                                                                                                                                                   
+  __GIT_PROMPT_DIR=$(brew --prefix)/opt/bash-git-prompt/share                                                                                                                                                                                                               
+  source "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh"                                                                                                                                                                                                          
+fi
 
-dc-enter () { docker exec -ti $1 bash; }
+# ANDROID SDK
+export ANDROID_HOME="/usr/local/Caskroom/android-sdk/Android"
+export PATH="$ANDROID_HOME/tools:$PATH"
+export PATH="$ANDROID_HOME/platform-tools:$PATH"
