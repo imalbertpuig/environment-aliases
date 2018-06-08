@@ -10,11 +10,22 @@ alias dc-off='docker-compose kill && docker-compose rm --force'
 alias dockerstop='docker stop $(docker ps -a -q)'
 alias dockerrm='docker rm $(docker ps -a -q)'
 dc-enter () { docker exec -ti $1 bash; }
+#alias dc-up-bo='docker-compose -f docker-compose-bo.yml up -d'
 
 # VIM
 alias vim='nvim'
 
-# GIT
+# RECURSIVE "CD.." TO GO BACK
+function cd_up() {
+  cd $(printf "%0.s../" $(seq 1 $1 ));
+}
+alias 'cd..'='cd_up'
+
+# CHANGE TERMINAL COLORS
+export CLICOLOR=1 # enables coloring of your terminal
+export LSCOLORS=GxFxCxDxBxegedabagaced # specifies how to color specific items
+
+# git
 alias gl='git log '
 alias gs='git status '
 alias ga='git add '
@@ -39,9 +50,9 @@ alias gcgca='gcg && gca'
 alias gpod='git pull origin develop'
 alias gpom='git pull origin master'
 
-if [ -f "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh" ]; then                                                                                                                                                                                                   
-  __GIT_PROMPT_DIR=$(brew --prefix)/opt/bash-git-prompt/share                                                                                                                                                                                                               
-  source "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh"                                                                                                                                                                                                          
+if [ -f "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh" ]; then
+  __GIT_PROMPT_DIR=$(brew --prefix)/opt/bash-git-prompt/share
+  source "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh"
 fi
 
 # ANDROID SDK
