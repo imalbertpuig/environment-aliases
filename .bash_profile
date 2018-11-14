@@ -36,6 +36,7 @@ alias gf='git diff '
 alias gr='git rebase '
 alias gp='git pull '
 
+alias glf='git log --follow -p --'
 alias gaa='git add -A'
 alias gcg='git commit -m "G"'
 alias gca='git commit --amend'
