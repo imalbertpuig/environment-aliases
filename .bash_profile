@@ -60,3 +60,7 @@ fi
 export ANDROID_HOME="/usr/local/Caskroom/android-sdk/Android"
 export PATH="$ANDROID_HOME/tools:$PATH"
 export PATH="$ANDROID_HOME/platform-tools:$PATH"
+export PATH="/usr/local/sbin:$PATH"                                                                                                                                              
+# Language: https://stackoverflow.com/questions/30479607/explain-the-effects-of-export-lang-lc-ctype-lc-all                                                                      
+export LC_CTYPE=en_US.UTF-8                                                                                                                                                      
+export LC_ALL=en_US.UTF-8 
