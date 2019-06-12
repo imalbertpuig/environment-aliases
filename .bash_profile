@@ -15,6 +15,9 @@ dc-enter () { docker exec -ti $1 bash; }
 # VIM
 alias vim='nvim'
 
+# vlc
+alias vlc='/Applications/VLC.app/Contents/MacOS/VLC'
+
 # RECURSIVE "CD.." TO GO BACK
 function cd_up() {
   cd $(printf "%0.s../" $(seq 1 $1 ));
