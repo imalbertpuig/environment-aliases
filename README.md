@@ -1,10 +1,25 @@
-# Environment Aliases
-Single file with all my aliases.
+# Environment Aliases for BASH
 
-## Configuration for Bash
-Execute the next command to refresh the aliases without reboot the system:
+```
+vim ~/.bash_profile
+```
+
+Refresh aliases without rebooting:
+
 ```
 source ~/.bash_profile
+```
+
+# Environment Aliases for ZSH
+
+```
+vim ~/.zshrc
+```
+
+Refresh aliases without rebooting:
+
+```
+source ~/.zshrc
 ```
 
 ## Configuration for iTerm2 with oh-my-zsh
