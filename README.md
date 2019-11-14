@@ -1,4 +1,4 @@
-# Environment Aliases for BASH
+# BASH
 
 ```
 vim ~/.bash_profile
@@ -10,7 +10,7 @@ Refresh aliases without rebooting:
 source ~/.bash_profile
 ```
 
-# Environment Aliases for ZSH
+# ZSH
 
 ```
 vim ~/.zshrc
