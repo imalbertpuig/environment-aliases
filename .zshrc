@@ -101,9 +101,9 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# MANUAL
+# MANUAL
 # https://medium.com/@Clovis_app/configuration-of-a-beautiful-efficient-terminal-and-prompt-on-osx-in-7-minutes-827c29391961
-# https://github.com/Powerlevel9k/powerlevel9k/wiki/Stylizing-Your-Prompt#double-lined-prompt
+# https://github.com/Powerlevel9k/powerlevel9k/wiki/Stylizing-Your-Prompt#double-lined-prompt
 
 # Shorter prompt
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir rbenv vcs)
@@ -124,7 +124,7 @@ POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%{%B%F{black}%K{yellow}%} $user_symbo
 # New line after each prompt
 POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
 
-# Change color of warning git status
+# Change color of warning git status
 POWERLEVEL9K_VCS_MODIFIED_BACKGROUND=’red’
 
 # Colorise the top Tabs of Iterm2 with the same color as background
@@ -133,7 +133,7 @@ echo -e "\033]6;1;bg;red;brightness;18\a"
 echo -e "\033]6;1;bg;green;brightness;26\a"
 echo -e "\033]6;1;bg;blue;brightness;33\a"
 
-# Syntax highlighting
+# Syntax highlighting
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # ALIASES
@@ -196,13 +196,26 @@ alias grom='git rebase origin/master'
 alias gcgca='gcg && gca'
 alias gpod='git pull origin develop'
 alias gpom='git pull origin master'
+alias glg1="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
+alias glg2="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all"
 
 # Language: https://stackoverflow.com/questions/30479607/explain-the-effects-of-export-lang-lc-ctype-lc-all
 export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
-# ANDROID SDK
-export ANDROID_HOME=/Users/apuig/Library/Android/sdk
-export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
+### START ANDROID SDK
 
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+# Set JAVA version
+export JAVA_HOME=`/usr/libexec/java_home -v 1.8.0_221`
+# Add that to the global PATH variable
+export PATH=${JAVA_HOME}/bin:$PATH
+# Set Android_HOME
+export ANDROID_HOME=~/Library/Android/sdk
+# Add the Android SDK to the ANDROID_HOME variable
+export PATH=$ANDROID_HOME/platform-tools:$PATH
+export PATH=$ANDROID_HOME/tools:$PATH
+# Set GRADLE_HOME
+export GRADLE_HOME=/usr/local/opt/gradle/
+export PATH=$PATH:$GRADLE_HOME/bin
+
+### END ANDROID SDK
