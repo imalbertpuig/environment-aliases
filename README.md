@@ -1,3 +1,5 @@
+First of all, install Neovim: https://neovim.io/
+
 # BASH
 
 ```
